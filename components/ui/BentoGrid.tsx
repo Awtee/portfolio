@@ -5,7 +5,11 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
 // Also install this npm i --save-dev @types/react-lottie
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("react-lottie"), {
+  ssr: false,
+});
 
 import { cn } from "@/lib/utils";
 
